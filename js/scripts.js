@@ -43,4 +43,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // DEMO MODAL 
+    const modal       = document.getElementById('demo-modal');
+    const modalInner  = document.getElementById('demo-modal-inner');
+
+    // Open — cualquier elemento con data-demo-trigger o class .demo-trigger
+    document.querySelectorAll('[data-demo-trigger], .demo-trigger').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close — X button
+    document.getElementById('demo-modal-close')?.addEventListener('click', closeModal);
+
+    // Close — click backdrop
+    modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close — Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 });
