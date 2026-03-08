@@ -210,7 +210,7 @@ ul { list-style: none; }
 .hero-badge .fa-circle-dot { font-size: 0.5rem; }
 
 .hero-content {
-    max-width: 760px;
+    max-width: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;
