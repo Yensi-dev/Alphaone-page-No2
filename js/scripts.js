@@ -46,6 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // DEMO MODAL 
     const modal       = document.getElementById('demo-modal');
     const modalInner  = document.getElementById('demo-modal-inner');
+    document.getElementById('demo-submit').addEventListener('click', function () {
+    const emailInput = document.getElementById('demo-email');
+    const emailError = document.getElementById('email-error');
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+
+    if (!emailValid) {
+        emailInput.classList.add('invalid');
+        emailError.classList.add('visible');
+        emailInput.focus();
+    } else {
+        emailInput.classList.remove('invalid');
+        emailError.classList.remove('visible');
+    }
+});
+
+document.getElementById('demo-email').addEventListener('input', function () {
+    this.classList.remove('invalid');
+    document.getElementById('email-error').classList.remove('visible');
+});
 
     // Open — cualquier elemento con data-demo-trigger o class .demo-trigger
     document.querySelectorAll('[data-demo-trigger], .demo-trigger').forEach(btn => {

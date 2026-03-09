@@ -373,3 +373,12 @@ ul { list-style: none; }
     .section { padding: 4rem 0; }
     .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
+
+.field-error {
+    display: none;
+    font-size: 0.75rem;
+    color: #dc2626;
+    margin-top: 0.25rem;
+}
+.field-error.visible { display: block; }
+.form-group input.invalid { border-color: #dc2626; box-shadow: 0 0 0 3px rgba(220,38,38,.12); }
