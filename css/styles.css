@@ -101,7 +101,7 @@ ul { list-style: none; }
     color: var(--navy);
     letter-spacing: 0.04em;
     line-height: 1;
-    color:  #0c1c2ed0;
+    color:  #0c1c2ee3;
 }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
