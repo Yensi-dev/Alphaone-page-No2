@@ -17,494 +17,202 @@
             --accent:      #0284c7;
             --accent-hover:#0369a1;
             --white:       #ffffff;
-            --gray-50:     #f8fafc;
+            --gray-50:     #f9fafb;
             --gray-100:    #f1f5f9;
             --gray-200:    #e2e8f0;
-            --gray-300:    #cbd5e1;
             --gray-400:    #94a3b8;
             --gray-500:    #64748b;
             --gray-700:    #334155;
             --gray-900:    #0f172a;
-            --font:        'DM Sans', system-ui, sans-serif;
-            --radius:      8px;
-            --radius-lg:   14px;
-            --radius-xl:   20px;
-            --shadow-sm:   0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-            --shadow-md:   0 4px 20px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
-            --shadow-lg:   0 16px 48px rgba(0,0,0,.10), 0 4px 12px rgba(0,0,0,.05);
-            --trans:       0.22s ease;
+            --font:        'DM Sans', system-ui, -apple-system, sans-serif;
+            --radius:      6px;
+            --radius-lg:   12px;
+            --radius-xl:   16px;
+            --shadow-sm:   0 1px 3px rgba(0,0,0,.07);
+            --shadow-md:   0 4px 16px rgba(0,0,0,.09);
+            --shadow-lg:   0 12px 36px rgba(0,0,0,.12);
+            --trans:       0.24s ease;
         }
 
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font);
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--gray-700);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
-        }
+        body { font-family: var(--font); font-size: 16px; line-height: 1.7; color: var(--gray-700); background: var(--white); -webkit-font-smoothing: antialiased; }
+        img, video { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        img { max-width:100%; display:block; }
 
-        .container {
-            width: 100%;
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 2.5rem;
-        }
+        .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 2rem; }
 
-        /* ─── NAVBAR ─── */
-        .navbar {
-            position: fixed; top:0; left:0; width:100%; z-index:999;
-            background: rgba(255,255,255,.97);
-            border-bottom: 1px solid var(--gray-200);
-            backdrop-filter: blur(12px);
-            transition: box-shadow var(--trans);
-        }
-        .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
-        .nav-inner {
-            max-width: 1180px; margin:0 auto; padding:0 2.5rem;
-            height: 68px; display:flex; align-items:center; justify-content:space-between;
-        }
-        .logo-text {
-            font-size: 1.5rem; font-weight: 700; color: var(--navy); letter-spacing:.02em;
-        }
-        .nav-links { display:flex; align-items:center; gap:.25rem; }
-        .nav-links > li > a {
-            display:flex; align-items:center; gap:.3rem;
-            padding:.5rem .9rem; font-size:.875rem; font-weight:500; color:var(--gray-500);
-            border-radius:var(--radius); transition:color var(--trans), background var(--trans);
-        }
-        .nav-links > li > a:hover { color:var(--navy); background:var(--gray-50); }
-        .nav-links a.active { color:var(--accent) !important; }
-        .nav-links a.nav-cta {
-            background: var(--accent); color:var(--white) !important;
-            padding:.5rem 1.25rem; border-radius:var(--radius); font-weight:600; margin-left:.5rem;
-            transition: background var(--trans), box-shadow var(--trans);
-        }
-        .nav-links a.nav-cta:hover { background:var(--accent-hover); box-shadow:0 4px 14px rgba(2,132,199,.3); }
-        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; border:none; background:none; }
-        .hamburger span { display:block; width:22px; height:2px; background:var(--navy); border-radius:2px; }
-        .mobile-menu {
-            display:none; background:var(--white); border-bottom:1px solid var(--gray-200);
-            padding:.5rem 1.5rem; position:fixed; top:68px; left:0; right:0; z-index:998;
-            box-shadow: var(--shadow-md);
-        }
-        .mobile-menu a { display:block; padding:.8rem .5rem; font-size:.95rem; font-weight:500; color:var(--gray-700); border-bottom:1px solid var(--gray-100); }
-        .mobile-menu a:last-child { border-bottom:none; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 999; background: rgba(255,255,255,0.98); border-bottom: 1px solid var(--gray-200); backdrop-filter: blur(10px); transition: box-shadow var(--trans); }
+        .navbar.scrolled { box-shadow: var(--shadow-md); }
+        .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 2rem; height: 66px; display: flex; align-items: center; justify-content: space-between; }
+        .logo-text { font-size: 3rem; font-weight: 700; color: #0c1c2ee4; letter-spacing: 0.01em; line-height: 1; }
+        .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a { display: flex; align-items: center; gap: 0.35rem; padding: 0.5rem 0.85rem; font-size: 0.9rem; font-weight: 500; color: var(--gray-700); border-radius: var(--radius); transition: color var(--trans), background var(--trans); }
+        .nav-links > li > a:hover { color: var(--accent); background: var(--gray-50); }
+        .nav-links a.active { color: var(--accent) !important; }
+        .nav-links a.nav-cta { background: var(--accent); color: var(--white) !important; padding: 0.5rem 1.25rem; border-radius: var(--radius); font-weight: 600; margin-left: 0.5rem; }
+        .nav-links a.nav-cta:hover { background: var(--accent-hover); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; border: none; background: none; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+        .mobile-menu { display: none; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 0.5rem 1rem; position: fixed; top: 66px; left: 0; right: 0; z-index: 998; }
+        .mobile-menu a { display: block; padding: 0.8rem 0.5rem; font-size: 0.95rem; font-weight: 500; color: var(--gray-700); border-bottom: 1px solid var(--gray-200); }
+        .mobile-menu a:last-child { border-bottom: none; }
 
-        /* ─── HERO ─── */
-        .page-hero {
-            position:relative; min-height:55vh;
-            display:flex; align-items:flex-end;
-            padding-bottom: 5rem; padding-top: 68px; overflow:hidden;
-        }
-        .page-hero-bg {
-            position:absolute; inset:0;
-            background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1800') center/cover;
-            z-index:0;
-        }
-        .page-hero-overlay {
-            position:absolute; inset:0;
-            background: linear-gradient(155deg, rgba(9,20,38,.95) 0%, rgba(12,28,46,.75) 55%, rgba(3,105,161,.25) 100%);
-            z-index:1;
-        }
-        /* subtle grid texture */
-        .page-hero-overlay::after {
-            content:'';
-            position:absolute; inset:0;
-            background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-            background-size: 52px 52px;
-            mask-image: radial-gradient(ellipse 80% 80% at 30% 60%, black, transparent);
-        }
-        .page-hero-inner { position:relative; z-index:2; }
-        .breadcrumb {
-            display:flex; align-items:center; gap:.5rem;
-            font-size:.75rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
-            color:rgba(255,255,255,.4); margin-bottom:1.5rem;
-        }
-        .breadcrumb a { color:rgba(255,255,255,.4); transition:color var(--trans); }
-        .breadcrumb a:hover { color:rgba(255,255,255,.8); }
-        .breadcrumb i { font-size:.55rem; }
-        .page-hero-inner h1 {
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
-            font-weight: 700; color:var(--white);
-            line-height:1.08; letter-spacing:-.03em;
-            margin-bottom:1.25rem; max-width:700px;
-        }
-        .page-hero-inner h1 em { font-style:normal; color:var(--blue-light); }
-        .page-hero-inner p {
-            font-size:1.05rem; color:rgba(255,255,255,.65);
-            max-width:500px; line-height:1.7; margin-bottom:2.5rem; font-weight:300;
-        }
-        .hero-pills { display:flex; gap:.6rem; flex-wrap:wrap; }
-        .hero-pill {
-            display:inline-flex; align-items:center; gap:.5rem;
-            background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
-            border-radius:100px; padding:.4rem 1rem;
-            font-size:.78rem; font-weight:500; color:rgba(255,255,255,.7);
-        }
-        .hero-pill i { color:var(--blue-light); font-size:.7rem; }
+        .page-hero { position: relative; min-height: 52vh; display: flex; align-items: flex-end; padding-bottom: 4rem; padding-top: 120px; overflow: hidden; }
+        .page-hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1800') center/cover; z-index: 0; }
+        .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(12,28,46,.88) 0%, rgba(12,28,46,.6) 100%); z-index: 1; }
+        .page-hero-inner { position: relative; z-index: 2; }
+        .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,.5); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: .05em; }
+        .breadcrumb a { color: rgba(255,255,255,.5); transition: color var(--trans); }
+        .breadcrumb a:hover { color: var(--white); }
+        .breadcrumb i { font-size: 0.6rem; }
+        .page-hero-inner h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 1rem; letter-spacing: -.02em; }
+        .page-hero-inner h1 em { font-style: normal; color: var(--blue-light); }
+        .page-hero-inner p { font-size: 1.1rem; color: rgba(255,255,255,.72); max-width: 560px; line-height: 1.6; }
 
-        /* ─── LANG BAR ─── */
-        .lang-bar {
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
-            padding: .8rem 0;
-            position: sticky; top: 68px; z-index: 100;
-            box-shadow: 0 1px 0 var(--gray-200);
-        }
-        .lang-bar-inner { display:flex; align-items:center; gap:.35rem; flex-wrap:wrap; }
-        .lang-bar-label { font-size:.75rem; font-weight:600; color:var(--gray-400); margin-right:.3rem; letter-spacing:.04em; text-transform:uppercase; }
-        .lang-btn {
-            font-size:.82rem; font-weight:500; color:var(--gray-500);
-            padding:.35rem .85rem; border-radius:var(--radius); border:1px solid transparent;
-            cursor:pointer; background:none; font-family:var(--font); transition:all var(--trans);
-        }
-        .lang-btn:hover { background:var(--gray-100); color:var(--navy); }
-        .lang-btn.active { background:var(--navy); color:var(--white); border-color:var(--navy); font-weight:600; }
+        /* ── CHANGE 1: unified background so sidebar & panel blend seamlessly ── */
+        .contacts-section { background: var(--gray-50); }
+        .contacts-wrap { display:grid; grid-template-columns:240px 1fr; border-top:1px solid var(--gray-200); min-height:70vh; }
 
-        /* ─── QUICK STATS ─── */
-        .stats-strip {
-            background: var(--gray-50);
-            border-bottom: 1px solid var(--gray-200);
-            padding: 2rem 0;
-        }
-        .stats-inner { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
-        .stat-item {
-            padding: 1rem 2rem;
-            border-right: 1px solid var(--gray-200);
-            display:flex; flex-direction:column; gap:.2rem;
-        }
-        .stat-item:last-child { border-right:none; }
-        .stat-num {
-            font-size:1.75rem; font-weight:700; color:var(--navy); letter-spacing:-.03em; line-height:1;
-        }
-        .stat-num span { color:var(--accent); }
-        .stat-lbl { font-size:.8rem; color:var(--gray-500); font-weight:400; }
-
-        /* ─── CONTACTS LAYOUT ─── */
-        .contacts-section { background:var(--white); }
-        .contacts-wrap {
-            display:grid; grid-template-columns:240px 1fr;
-            border-top:1px solid var(--gray-200);
-            min-height:70vh;
-        }
-
-        /* ─── SIDEBAR ─── */
-        .region-sidebar {
-            background:var(--gray-50);
-            border-right:1px solid var(--gray-200);
-            padding: 2.5rem 0;
-            position:sticky; top:calc(68px + 45px);
-            align-self:start; height:calc(100vh - 113px);
-            overflow-y: auto;
-        }
-        .region-sidebar-title {
-            font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
-            color:var(--gray-400); padding:0 1.5rem .9rem; border-bottom:1px solid var(--gray-200); margin-bottom:.75rem;
-        }
-        .rtab {
-            display:flex; align-items:center; gap:.75rem; width:100%;
-            padding:.8rem 1.5rem; font-size:.88rem; font-weight:500; color:var(--gray-600, #475569);
-            background:none; border:none; border-left:3px solid transparent;
-            text-align:left; font-family:var(--font); cursor:pointer;
-            transition: background var(--trans), color var(--trans), border-color var(--trans);
-        }
+        .region-sidebar { background: var(--gray-50); border-right:1px solid var(--gray-200); padding: 2.5rem 0; position:sticky; top:66px; align-self:start; height:calc(100vh - 66px); overflow-y: auto; }
+        .region-sidebar-title { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-400); padding:0 1.5rem .9rem; border-bottom:1px solid var(--gray-200); margin-bottom:.75rem; }
+        .rtab { display:flex; align-items:center; gap:.75rem; width:100%; padding:.8rem 1.5rem; font-size:.88rem; font-weight:500; color:var(--gray-600, #475569); background:none; border:none; border-left:3px solid transparent; text-align:left; font-family:var(--font); cursor:pointer; transition: background var(--trans), color var(--trans), border-color var(--trans); }
         .rtab:hover { background:var(--gray-100); color:var(--navy); }
         .rtab.active { background:var(--white); color:var(--accent); border-left-color:var(--accent); font-weight:600; }
         .rtab-flag { font-size:1rem; line-height:1; flex-shrink:0; }
-        .rtab-count {
-            margin-left:auto; font-size:.7rem; font-weight:600;
-            background:var(--gray-200); color:var(--gray-500);
-            border-radius:100px; padding:.15rem .55rem; line-height:1.4;
-        }
+        .rtab-count { margin-left:auto; font-size:.7rem; font-weight:600; background:var(--gray-200); color:var(--gray-500); border-radius:100px; padding:.15rem .55rem; line-height:1.4; }
         .rtab.active .rtab-count { background:rgba(2,132,199,.12); color:var(--accent); }
 
-        /* ─── PANELS ─── */
-        .region-panels { padding: 3rem 3.5rem 5rem; }
+        /* ── CHANGE 2: panels same gray-50 as sidebar ── */
+        .region-panels { padding: 3rem 3.5rem 5rem; background: var(--gray-50); }
         .region-panel { display:none; }
         .region-panel.active { display:block; }
 
         .panel-header { margin-bottom:3rem; }
-        .panel-eyebrow {
-            display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.12em;
-            text-transform:uppercase; color:var(--accent); margin-bottom:.6rem;
-        }
+        .panel-eyebrow { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:.6rem; }
         .panel-header h2 { font-size:2rem; font-weight:700; color:var(--navy); letter-spacing:-.025em; margin-bottom:.5rem; }
         .panel-header p { font-size:.95rem; color:var(--gray-500); max-width:520px; line-height:1.65; }
 
-        /* Language group */
         .lang-group { margin-bottom:3rem; }
         .lang-group:last-child { margin-bottom:0; }
-        .lang-group-header {
-            display:flex; align-items:center; gap:.75rem;
-            margin-bottom:1.25rem; padding-bottom:.75rem;
-            border-bottom:1px solid var(--gray-200);
-        }
-        .lang-tag {
-            width:32px; height:32px; border-radius:6px;
-            display:flex; align-items:center; justify-content:center;
-            font-size:.62rem; font-weight:800; letter-spacing:.04em; color:var(--white); flex-shrink:0;
-        }
+        .lang-group-header { display:flex; align-items:center; gap:.75rem; margin-bottom:1.25rem; padding-bottom:.75rem; border-bottom:1px solid var(--gray-200); }
+        .lang-tag { width:32px; height:32px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.62rem; font-weight:800; letter-spacing:.04em; color:var(--white); flex-shrink:0; }
         .lang-group-header h3 { font-size:1rem; font-weight:700; color:var(--navy); }
         .lang-group-header span { font-size:.82rem; color:var(--gray-400); margin-left:auto; }
 
-        /* Contact card */
+        /* ── CHANGE 3: bigger, more spacious cards — white lifts off the gray-50 bg ── */
         .contact-card {
-            display:grid; grid-template-columns:1.6fr 1.8fr 1.8fr auto;
-            align-items:center; gap:2rem;
-            padding:1.6rem 2rem;
+            display:grid; grid-template-columns:1.8fr 2fr 2fr;
+            align-items:center; gap:2.5rem;
+            padding:2rem 2.5rem;
             background:var(--white); border:1px solid var(--gray-200);
             border-radius:var(--radius-lg);
-            margin-bottom:.75rem;
+            margin-bottom:1rem;
             transition: box-shadow var(--trans), border-color var(--trans), transform var(--trans);
         }
-        .contact-card:hover {
-            box-shadow: var(--shadow-md);
-            border-color:var(--gray-300);
-            transform:translateY(-2px);
-        }
-        .cc-identity { display:flex; align-items:center; gap:1rem; }
-        .cc-flag {
-            width:42px; height:42px; border-radius:10px;
-            background:rgba(2,132,199,.07);
-            display:flex; align-items:center; justify-content:center;
-            font-size:1.2rem; flex-shrink:0;
-        }
-        .cc-name { font-size:.95rem; font-weight:700; color:var(--navy); }
-        .cc-lang { font-size:.75rem; color:var(--gray-400); margin-top:.1rem; }
-
-        .cc-col {}
-        .cc-label {
-            font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
-            color:var(--gray-400); margin-bottom:.3rem;
-        }
-        .cc-col a { font-size:.88rem; color:var(--accent); font-weight:500; transition:color var(--trans); display:block; }
+        .contact-card:hover { box-shadow: var(--shadow-lg); border-color: rgba(2,132,199,.2); transform:translateY(-3px); }
+        .cc-identity { display:flex; align-items:center; gap:1.25rem; }
+        .cc-flag { width:52px; height:52px; border-radius:12px; background:rgba(2,132,199,.07); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0; }
+        .cc-name { font-size:1rem; font-weight:700; color:var(--navy); }
+        .cc-lang { font-size:.78rem; color:var(--gray-400); margin-top:.15rem; }
+        .cc-label { font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-400); margin-bottom:.4rem; }
+        .cc-col a { font-size:.92rem; color:var(--accent); font-weight:500; transition:color var(--trans); display:block; }
         .cc-col a:hover { color:var(--accent-hover); text-decoration:underline; }
-        .cc-col span { font-size:.88rem; color:var(--gray-700); }
+        .cc-col span { font-size:.92rem; color:var(--gray-700); }
 
-        .cc-actions { display:flex; flex-direction:column; gap:.45rem; align-items:stretch; min-width:140px; }
-
-        .btn-sm-primary {
-            display:inline-flex; align-items:center; justify-content:center; gap:.4rem;
-            background:var(--accent); color:var(--white); border:1px solid var(--accent);
-            font-size:.8rem; font-weight:600; padding:.55rem 1.1rem; border-radius:var(--radius);
-            cursor:pointer; font-family:var(--font); transition:all var(--trans); white-space:nowrap;
-        }
-        .btn-sm-primary:hover { background:var(--accent-hover); border-color:var(--accent-hover); box-shadow:0 4px 12px rgba(2,132,199,.3); }
-        .btn-sm-outline {
-            display:inline-flex; align-items:center; justify-content:center; gap:.4rem;
-            background:transparent; color:var(--gray-700); border:1px solid var(--gray-200);
-            font-size:.8rem; font-weight:500; padding:.55rem 1.1rem; border-radius:var(--radius);
-            cursor:pointer; font-family:var(--font); transition:all var(--trans); white-space:nowrap;
-        }
-        .btn-sm-outline:hover { border-color:var(--navy); color:var(--navy); background:var(--gray-50); }
-
-        /* ─── BECOME PARTNER ─── */
         .become-section { padding:6rem 0; background:var(--gray-50); border-top:1px solid var(--gray-200); }
-        .become-grid {
-            display:grid; grid-template-columns:1fr 1fr;
-            gap:6rem; align-items:center;
-        }
+        .become-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
         .become-left {}
-        .eyebrow-tag {
-            display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.12em;
-            text-transform:uppercase; color:var(--accent); margin-bottom:.75rem;
-        }
-        .become-left h2 {
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            font-weight:700; color:var(--navy); line-height:1.15;
-            letter-spacing:-.025em; margin-bottom:1.25rem;
-        }
+        .eyebrow-tag { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin-bottom:.75rem; }
+        .become-left h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight:700; color:var(--navy); line-height:1.15; letter-spacing:-.025em; margin-bottom:1.25rem; }
         .become-left h2 em { font-style:normal; color:var(--accent); }
         .become-left p { font-size:1rem; color:var(--gray-500); line-height:1.75; margin-bottom:2.5rem; max-width:440px; }
-
         .become-perks { display:flex; flex-direction:column; gap:1rem; margin-bottom:2.5rem; }
         .perk-row { display:flex; align-items:flex-start; gap:.9rem; }
-        .perk-icon {
-            width:36px; height:36px; border-radius:8px;
-            background:rgba(2,132,199,.08);
-            display:flex; align-items:center; justify-content:center; flex-shrink:0;
-        }
+        .perk-icon { width:36px; height:36px; border-radius:8px; background:rgba(2,132,199,.08); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
         .perk-icon i { color:var(--accent); font-size:.82rem; }
         .perk-text h4 { font-size:.9rem; font-weight:700; color:var(--navy); margin-bottom:.15rem; }
         .perk-text p { font-size:.85rem; color:var(--gray-500); line-height:1.55; }
-
         .become-actions { display:flex; gap:.75rem; flex-wrap:wrap; }
-        .btn-primary {
-            display:inline-flex; align-items:center; gap:.45rem;
-            background:var(--accent); color:var(--white);
-            font-size:.9rem; font-weight:600; padding:.9rem 2rem;
-            border-radius:var(--radius); border:none; cursor:pointer; font-family:var(--font);
-            transition:background var(--trans), transform var(--trans), box-shadow var(--trans);
-            box-shadow:0 4px 14px rgba(2,132,199,.3);
-        }
+        .btn-primary { display:inline-flex; align-items:center; gap:.45rem; background:var(--accent); color:var(--white); font-size:.9rem; font-weight:600; padding:.9rem 2rem; border-radius:var(--radius); border:none; cursor:pointer; font-family:var(--font); transition:background var(--trans), transform var(--trans), box-shadow var(--trans); box-shadow:0 4px 14px rgba(2,132,199,.3); }
         .btn-primary:hover { background:var(--accent-hover); transform:translateY(-2px); box-shadow:0 8px 24px rgba(2,132,199,.4); }
-        .btn-outline-navy {
-            display:inline-flex; align-items:center; gap:.45rem;
-            background:transparent; color:var(--navy);
-            font-size:.9rem; font-weight:600; padding:.9rem 1.75rem;
-            border-radius:var(--radius); border:1.5px solid var(--gray-300);
-            cursor:pointer; font-family:var(--font);
-            transition:all var(--trans);
-        }
-        .btn-outline-navy:hover { border-color:var(--navy); background:var(--navy); color:var(--white); }
+        .become-visual {}
+        .become-img-wrap { position: relative; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 4/3; }
+        .become-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+        .become-img-wrap:hover img { transform: scale(1.03); }
+        .become-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,28,46,.75) 0%, rgba(12,28,46,.1) 55%, transparent 100%); }
+        .become-img-stats { position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 0; padding: 2rem 2.5rem; }
+        .bis-item { display: flex; flex-direction: column; align-items: center; gap: .2rem; flex: 1; text-align: center; }
+        .bis-num { font-size: 2rem; font-weight: 700; color: var(--white); letter-spacing: -.03em; line-height: 1; }
+        .bis-num span { color: var(--blue-light); }
+        .bis-lbl { font-size: .72rem; color: rgba(255,255,255,.6); font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+        .bis-divider { width: 1px; height: 36px; background: rgba(255,255,255,.2); flex-shrink: 0; }
 
-        /* Tier cards (right side of become) */
-        .tier-cards { display:flex; flex-direction:column; gap:1rem; }
-        .tier-card {
-            background:var(--white); border:1px solid var(--gray-200);
-            border-radius:var(--radius-lg); padding:1.5rem 1.75rem;
-            display:flex; align-items:flex-start; gap:1.25rem;
-            transition: box-shadow var(--trans), transform var(--trans);
-        }
-        .tier-card:hover { box-shadow:var(--shadow-md); transform:translateY(-2px); }
-        .tier-card.featured { border-color:var(--accent); background:linear-gradient(135deg, rgba(2,132,199,.03) 0%, var(--white) 100%); }
-        .tier-card-icon {
-            width:44px; height:44px; border-radius:10px;
-            display:flex; align-items:center; justify-content:center;
-            font-size:1.3rem; flex-shrink:0;
-        }
-        .tier-card-body { flex:1; }
-        .tier-card-body h4 { font-size:.95rem; font-weight:700; color:var(--navy); margin-bottom:.25rem; }
-        .tier-card-body p { font-size:.82rem; color:var(--gray-500); line-height:1.55; }
-        .tier-badge-sm {
-            display:inline-block; font-size:.65rem; font-weight:700; letter-spacing:.08em;
-            text-transform:uppercase; padding:2px 8px; border-radius:100px; margin-bottom:.4rem;
-        }
-        .tier-badge-sm.silver { background:rgba(148,163,184,.15); color:#475569; }
-        .tier-badge-sm.gold   { background:rgba(234,179,8,.12); color:#92400e; }
-        .tier-badge-sm.plat   { background:rgba(2,132,199,.12); color:var(--accent); }
-        .tier-card-arrow {
-            color:var(--gray-300); font-size:.8rem; margin-top:.3rem; flex-shrink:0;
-            transition:color var(--trans), transform var(--trans);
-        }
-        .tier-card:hover .tier-card-arrow { color:var(--accent); transform:translateX(3px); }
-
-        /* ─── SUPPORT DOCS ─── */
-        .docs-section { padding:5rem 0; background:var(--white); border-top:1px solid var(--gray-200); }
-        .docs-header { margin-bottom:2.5rem; }
-        .docs-header h2 { font-size:1.6rem; font-weight:700; color:var(--navy); margin-bottom:.4rem; letter-spacing:-.02em; }
-        .docs-header p { font-size:.93rem; color:var(--gray-500); }
-        .docs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-        .doc-card {
-            display:flex; align-items:flex-start; gap:1rem;
-            background:var(--gray-50); border:1px solid var(--gray-200);
-            border-radius:var(--radius-lg); padding:1.5rem;
-            transition: box-shadow var(--trans), border-color var(--trans), transform var(--trans);
-        }
-        .doc-card:hover { box-shadow:var(--shadow-md); border-color:var(--gray-300); transform:translateY(-2px); background:var(--white); }
-        .doc-icon {
-            width:40px; height:40px; background:rgba(2,132,199,.08); border-radius:9px;
-            display:flex; align-items:center; justify-content:center; flex-shrink:0;
-        }
-        .doc-icon i { color:var(--accent); font-size:.95rem; }
-        .doc-info h4 { font-size:.9rem; font-weight:700; color:var(--navy); margin-bottom:.25rem; }
-        .doc-info p  { font-size:.8rem; color:var(--gray-500); line-height:1.5; margin-bottom:.75rem; }
-        .doc-dl {
-            display:inline-flex; align-items:center; gap:.35rem;
-            font-size:.78rem; font-weight:600; color:var(--accent);
-            cursor:pointer; background:none; border:none; font-family:var(--font);
-            padding:0; transition:color var(--trans);
-        }
-        .doc-dl:hover { color:var(--accent-hover); }
-
-        /* ─── FOOTER ─── */
         .site-footer { background:var(--gray-900); color:var(--white); padding-top:4rem; }
-        .footer-inner {
-            display:grid; grid-template-columns:1.8fr 1.4fr 1fr;
-            gap:4rem; padding-bottom:3rem;
-            border-bottom:1px solid rgba(255,255,255,.07);
-        }
-        .footer-logo { font-size:1.5rem; font-weight:700; color:var(--white); margin-bottom:1rem; letter-spacing:.01em; }
-        .footer-brand p { font-size:.875rem; color:var(--gray-400); line-height:1.7; max-width:280px; margin-bottom:.5rem; }
-        .footer-col h4 { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:1.25rem; }
-        .footer-col ul { display:flex; flex-direction:column; gap:.75rem; }
-        .footer-col a { font-size:.875rem; color:var(--gray-400); transition:color var(--trans); }
-        .footer-col a:hover { color:var(--white); }
-        .footer-contact-list { display:flex; flex-direction:column; gap:.9rem; }
-        .footer-contact-list li { display:flex; align-items:flex-start; gap:.75rem; font-size:.85rem; color:var(--gray-400); line-height:1.55; }
-        .fc-icon { flex-shrink:0; width:28px; height:28px; background:rgba(2,132,199,.12); border-radius:6px; display:flex; align-items:center; justify-content:center; }
-        .fc-icon i { font-size:.68rem; color:var(--blue-light); }
+        .footer-inner { display:grid; grid-template-columns:1.8fr 1.4fr 1fr; gap:4rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,.07); }
+        .footer-logo { font-size:1.6rem; font-weight:700; color:var(--white); margin-bottom:1rem; letter-spacing:-.01em; }
+        .footer-brand p { font-size:.92rem; color:var(--gray-400); line-height:1.65; max-width:300px; margin-bottom:.6rem; }
+        .footer-partner { font-size:.82rem !important; color:var(--gray-400) !important; }
+        .footer-partner strong { color:#7dd3fc; }
+        .footer-contact-block h4, .footer-nav-block h4 { font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:1.5rem; }
+        .footer-contact-list { display:flex; flex-direction:column; gap:1rem; }
+        .footer-contact-list li { display:flex; align-items:flex-start; gap:.8rem; font-size:.9rem; color:var(--gray-400); line-height:1.55; }
+        .fc-icon { flex-shrink:0; width:30px; height:30px; background:rgba(2,132,199,.12); border-radius:7px; display:flex; align-items:center; justify-content:center; }
+        .fc-icon i { font-size:.75rem; color:var(--blue-light); }
         .footer-contact-list a { color:var(--gray-400); transition:color var(--trans); }
         .footer-contact-list a:hover { color:var(--white); }
-        .footer-bar { text-align:center; padding:1.25rem 0; font-size:.78rem; color:rgba(255,255,255,.22); background:rgba(0,0,0,.2); }
+        .footer-nav-block ul { display:flex; flex-direction:column; gap:.8rem; }
+        .footer-nav-block a { font-size:.9rem; color:var(--gray-400); transition:color var(--trans); }
+        .footer-nav-block a:hover { color:var(--white); }
+        .footer-bar { text-align:center; padding:1.2rem 0; font-size:.8rem; color:rgba(255,255,255,.25); background:rgba(0,0,0,.25); }
 
-        /* ─── REVEAL ─── */
-        .reveal { opacity:0; transform:translateY(20px); transition:opacity .55s ease, transform .55s ease; }
-        .reveal.visible { opacity:1; transform:none; }
-        .reveal-d1 { transition-delay:.08s; }
-        .reveal-d2 { transition-delay:.16s; }
-        .reveal-d3 { transition-delay:.24s; }
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .reveal-d1 { transition-delay: .08s; }
+        .reveal-d2 { transition-delay: .16s; }
+        .reveal-d3 { transition-delay: .24s; }
 
-        /* ─── RESPONSIVE ─── */
-        @media(max-width:1024px) {
-            .contacts-wrap { grid-template-columns:200px 1fr; }
-            .region-panels { padding:2.5rem 2rem 4rem; }
-            .contact-card { grid-template-columns:1fr; gap:1rem; }
-            .cc-actions { flex-direction:row; min-width:auto; }
-            .become-grid { grid-template-columns:1fr; gap:3.5rem; }
-            .docs-grid { grid-template-columns:1fr 1fr; }
-        }
         @media(max-width:860px) {
-            .nav-links { display:none; }
-            .hamburger { display:flex; }
-            .contacts-wrap { grid-template-columns:1fr; }
-            .region-sidebar {
-                position:static; height:auto;
-                display:flex; flex-direction:row; flex-wrap:wrap; gap:4px;
-                padding:.75rem 1rem; border-right:none; border-bottom:1px solid var(--gray-200);
-            }
-            .region-sidebar-title { display:none; }
-            .rtab { width:auto; border-left:none; border-bottom:2px solid transparent; border-radius:var(--radius); padding:.45rem .8rem; font-size:.82rem; }
-            .rtab.active { border-left:none; border-bottom-color:var(--accent); background:transparent; }
-            .rtab-count { display:none; }
-            .stats-inner { grid-template-columns:1fr 1fr; }
-            .stat-item:nth-child(2) { border-right:none; }
-            .stat-item:nth-child(3) { border-right:1px solid var(--gray-200); border-top:1px solid var(--gray-200); }
-            .stat-item:nth-child(4) { border-top:1px solid var(--gray-200); }
-            .footer-inner { grid-template-columns:1fr 1fr; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .contacts-wrap { grid-template-columns: 1fr; }
+            .region-sidebar { position: static; height: auto; display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px; padding: .75rem 1rem; border-right: none; border-bottom: 1px solid var(--gray-200); }
+            .region-sidebar-title { display: none; }
+            .rtab { width: auto; border-left: none; border-bottom: 2px solid transparent; border-radius: var(--radius); padding: .45rem .8rem; font-size: .82rem; }
+            .rtab.active { border-left: none; border-bottom-color: var(--accent); background: transparent; }
+            .rtab-count { display: none; }
+            .contact-card { grid-template-columns: 1fr; gap: 1rem; }
+            .become-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
         }
         @media(max-width:600px) {
-            .container { padding:0 1.25rem; }
-            .region-panels { padding:1.75rem 1.25rem 3rem; }
-            .docs-grid { grid-template-columns:1fr; }
-            .stats-inner { grid-template-columns:1fr 1fr; }
-            .footer-inner { grid-template-columns:1fr; gap:2.5rem; }
-            .hero-pills { display:none; }
-            .become-actions { flex-direction:column; }
+            .container { padding: 0 1.25rem; }
+            .page-hero { min-height: 45vh; }
+            .region-panels { padding: 1.75rem 1.25rem 3rem; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+            .become-actions { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="index.html" class="logo-text">ALPHAONE</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="presence.html">Global Presence</a></li>
-                <li><a href="benefits.html">Why ALPHAONE?</a></li>
-                <li><a href="partners.html" class="active">Partners</a></li>
-                <li><a href="#become" class="nav-cta">Become a Partner</a></li>
+                <li><a href="benefits.html">Why <span style="color:#0c1c2ed0;">ALPHAONE?</span></a></li>
             </ul>
-            <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="hamburger" id="hamburger-btn"><span></span><span></span><span></span></div>
         </div>
     </nav>
     <div class="mobile-menu" id="mobile-menu">
         <a href="index.html">Home</a>
         <a href="presence.html">Global Presence</a>
         <a href="benefits.html">Why ALPHAONE?</a>
-        <a href="partners.html">Partners</a>
-        <a href="#become">Become a Partner</a>
     </div>
 
     <!-- HERO -->
@@ -518,81 +226,23 @@
                 <span>Partners</span>
             </div>
             <h1>Contacting<br><em>ALPHAONE</em> Partners</h1>
-            <p>Select your region and language to connect with the right partner support team near you.</p>
-            <div class="hero-pills">
-                <span class="hero-pill"><i class="fas fa-globe"></i> 42 Countries</span>
-                <span class="hero-pill"><i class="fas fa-handshake"></i> 280+ Active Partners</span>
-                <span class="hero-pill"><i class="fas fa-clock"></i> 2-Day Response</span>
-            </div>
+            <p>Choose your region below and connect with your local ALPHAONE partner support team.</p>
         </div>
     </section>
-
-    <!-- LANGUAGE BAR -->
-    <div class="lang-bar">
-        <div class="container lang-bar-inner">
-            <span class="lang-bar-label">Language:</span>
-            <button class="lang-btn active">English</button>
-            <button class="lang-btn">Español</button>
-            <button class="lang-btn">Français</button>
-            <button class="lang-btn">Deutsch</button>
-            <button class="lang-btn">Português</button>
-        </div>
-    </div>
-
-    <!-- STATS STRIP -->
-    <div class="stats-strip reveal">
-        <div class="container">
-            <div class="stats-inner">
-                <div class="stat-item">
-                    <div class="stat-num">280<span>+</span></div>
-                    <div class="stat-lbl">Active Partners Worldwide</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">42</div>
-                    <div class="stat-lbl">Countries Covered</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">5</div>
-                    <div class="stat-lbl">Regional Support Teams</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-num">97<span>%</span></div>
-                    <div class="stat-lbl">Partner Retention Rate</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- CONTACTS -->
     <section class="contacts-section">
         <div class="contacts-wrap" style="max-width:1180px;margin:0 auto;">
 
-            <!-- Sidebar -->
             <div class="region-sidebar">
                 <div class="region-sidebar-title">Select Region</div>
-                <button class="rtab active" onclick="switchRegion('na',this)">
-                    <span class="rtab-flag">🌎</span> North America
-                    <span class="rtab-count">2</span>
-                </button>
-                <button class="rtab" onclick="switchRegion('emea',this)">
-                    <span class="rtab-flag">🌍</span> EMEA
-                    <span class="rtab-count">4</span>
-                </button>
-                <button class="rtab" onclick="switchRegion('apac',this)">
-                    <span class="rtab-flag">🌏</span> APAC
-                    <span class="rtab-count">3</span>
-                </button>
-                <button class="rtab" onclick="switchRegion('latam',this)">
-                    <span class="rtab-flag">🌎</span> LATAM
-                    <span class="rtab-count">5</span>
-                </button>
-                <button class="rtab" onclick="switchRegion('other',this)">
-                    <span class="rtab-flag">🌐</span> Other Teams
-                    <span class="rtab-count">2</span>
-                </button>
+                <button class="rtab active" onclick="switchRegion('na',this)"><span class="rtab-flag">🌎</span> North America<span class="rtab-count">2</span></button>
+                <button class="rtab" onclick="switchRegion('emea',this)"><span class="rtab-flag">🌍</span> EMEA<span class="rtab-count">4</span></button>
+                <button class="rtab" onclick="switchRegion('apac',this)"><span class="rtab-flag">🌏</span> APAC<span class="rtab-count">3</span></button>
+                <button class="rtab" onclick="switchRegion('latam',this)"><span class="rtab-flag">🌎</span> LATAM<span class="rtab-count">5</span></button>
+                <button class="rtab" onclick="switchRegion('other',this)"><span class="rtab-flag">🌐</span> Other Teams<span class="rtab-count">2</span></button>
             </div>
 
-            <!-- Panels -->
             <div class="region-panels">
 
                 <!-- NORTH AMERICA -->
@@ -602,341 +252,153 @@
                         <h2>North America</h2>
                         <p>Partner services for the United States, Canada, and Puerto Rico.</p>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:var(--navy);">EN</span>
-                            <h3>English</h3>
-                            <span>Supports English</span>
-                        </div>
-
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>English</h3><span>Supports English</span></div>
                         <div class="contact-card reveal reveal-d1">
-                            <div class="cc-identity">
-                                <div class="cc-flag">🇺🇸</div>
-                                <div>
-                                    <div class="cc-name">United States</div>
-                                    <div class="cc-lang">Supports English</div>
-                                </div>
-                            </div>
-                            <div class="cc-col">
-                                <div class="cc-label">Partner Services</div>
-                                <a href="mailto:partners-us@alphaonerp.com">partners-us@alphaonerp.com</a>
-                            </div>
-                            <div class="cc-col">
-                                <div class="cc-label">Technical Support</div>
-                                <a href="tel:9788670818">+1 978-867-0818</a>
-                            </div>
-                            <div class="cc-actions">
-                                <button class="btn-sm-primary">Open a new case</button>
-                                <button class="btn-sm-outline">View cases</button>
-                            </div>
+                            <div class="cc-identity"><div class="cc-flag">🇺🇸</div><div><div class="cc-name">United States</div><div class="cc-lang">Supports English</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-us@alphaonerp.com">partners-us@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:9788670818">+1 978-867-0818</a></div>
                         </div>
-
                         <div class="contact-card reveal reveal-d2">
-                            <div class="cc-identity">
-                                <div class="cc-flag">🇨🇦</div>
-                                <div>
-                                    <div class="cc-name">Canada</div>
-                                    <div class="cc-lang">Supports English</div>
-                                </div>
-                            </div>
-                            <div class="cc-col">
-                                <div class="cc-label">Partner Services</div>
-                                <a href="mailto:partners-ca@alphaonerp.com">partners-ca@alphaonerp.com</a>
-                            </div>
-                            <div class="cc-col">
-                                <div class="cc-label">Technical Support</div>
-                                <a href="tel:18884567890">+1 888-456-7890</a>
-                            </div>
-                            <div class="cc-actions">
-                                <button class="btn-sm-primary">Open a new case</button>
-                                <button class="btn-sm-outline">View cases</button>
-                            </div>
+                            <div class="cc-identity"><div class="cc-flag">🇨🇦</div><div><div class="cc-name">Canada</div><div class="cc-lang">Supports English</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-ca@alphaonerp.com">partners-ca@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:18884567890">+1 888-456-7890</a></div>
                         </div>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#c0392b;">ES</span>
-                            <h3>Spanish</h3>
-                            <span>Supports Spanish</span>
-                        </div>
-
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">ES</span><h3>Spanish</h3><span>Supports Spanish</span></div>
                         <div class="contact-card reveal reveal-d1">
-                            <div class="cc-identity">
-                                <div class="cc-flag">🇵🇷</div>
-                                <div>
-                                    <div class="cc-name">Puerto Rico</div>
-                                    <div class="cc-lang">Supports Spanish</div>
-                                </div>
-                            </div>
-                            <div class="cc-col">
-                                <div class="cc-label">Partner Services</div>
-                                <a href="mailto:partners-pr@alphaonerp.com">partners-pr@alphaonerp.com</a>
-                            </div>
-                            <div class="cc-col">
-                                <div class="cc-label">Technical Support</div>
-                                <a href="tel:17875550100">+1 787-555-0100</a>
-                            </div>
-                            <div class="cc-actions">
-                                <button class="btn-sm-primary">Open a new case</button>
-                                <button class="btn-sm-outline">View cases</button>
-                            </div>
+                            <div class="cc-identity"><div class="cc-flag">🇵🇷</div><div><div class="cc-name">Puerto Rico</div><div class="cc-lang">Supports Spanish</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-pr@alphaonerp.com">partners-pr@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:17875550100">+1 787-555-0100</a></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- EMEA -->
                 <div class="region-panel" id="panel-emea">
-                    <div class="panel-header reveal">
-                        <span class="panel-eyebrow">Region</span>
-                        <h2>EMEA</h2>
-                        <p>Europe, Middle East &amp; Africa partner services in multiple languages.</p>
-                    </div>
-
+                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>EMEA</h2><p>Europe, Middle East &amp; Africa partner services in multiple languages.</p></div>
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:var(--navy);">EN</span>
-                            <h3>English</h3><span>Supports English</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>English</h3><span>Supports English</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇬🇧</div><div><div class="cc-name">United Kingdom</div><div class="cc-lang">Supports English</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-uk@alphaonerp.com">partners-uk@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+442079460400">+44 20 7946 0400</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                         <div class="contact-card reveal reveal-d2">
                             <div class="cc-identity"><div class="cc-flag">🌍</div><div><div class="cc-name">Middle East &amp; Africa</div><div class="cc-lang">Supports English</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-mea@alphaonerp.com">partners-mea@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+442079460600">+44 20 7946 0600</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#1a5276;">FR</span>
-                            <h3>French</h3><span>Supports French</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#1a5276;">FR</span><h3>French</h3><span>Supports French</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇫🇷</div><div><div class="cc-name">France</div><div class="cc-lang">Supports French</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-fr@alphaonerp.com">partners-fr@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+33155550200">+33 1 5555 0200</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#1c2833;">DE</span>
-                            <h3>German</h3><span>Supports German</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#1c2833;">DE</span><h3>German</h3><span>Supports German</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇩🇪</div><div><div class="cc-name">Germany / DACH</div><div class="cc-lang">Supports German</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-de@alphaonerp.com">partners-de@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+493055500500">+49 30 5550 0500</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#c0392b;">ES</span>
-                            <h3>Spanish</h3><span>Supports Spanish</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">ES</span><h3>Spanish</h3><span>Supports Spanish</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇪🇸</div><div><div class="cc-name">Spain</div><div class="cc-lang">Supports Spanish</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-es@alphaonerp.com">partners-es@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+34915550300">+34 91 5550 300</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- APAC -->
                 <div class="region-panel" id="panel-apac">
-                    <div class="panel-header reveal">
-                        <span class="panel-eyebrow">Region</span>
-                        <h2>Asia Pacific</h2>
-                        <p>Partner services for Australia, New Zealand, Southeast Asia, and Japan.</p>
-                    </div>
-
+                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>Asia Pacific</h2><p>Partner services for Australia, New Zealand, Southeast Asia, and Japan.</p></div>
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:var(--navy);">EN</span>
-                            <h3>English</h3><span>Supports English</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>English</h3><span>Supports English</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇦🇺</div><div><div class="cc-name">Australia &amp; NZ</div><div class="cc-lang">Supports English</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-anz@alphaonerp.com">partners-anz@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+61285550800">+61 2 8555 0800</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                         <div class="contact-card reveal reveal-d2">
                             <div class="cc-identity"><div class="cc-flag">🇸🇬</div><div><div class="cc-name">Singapore &amp; SEA</div><div class="cc-lang">Supports English</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-apac@alphaonerp.com">partners-apac@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+6565550700">+65 6555 0700</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#c0392b;">JP</span>
-                            <h3>Japanese</h3><span>Supports Japanese</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">JP</span><h3>Japanese</h3><span>Supports Japanese</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇯🇵</div><div><div class="cc-name">Japan</div><div class="cc-lang">Supports Japanese</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-jp@alphaonerp.com">partners-jp@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+81355550900">+81 3 5555 0900</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- LATAM -->
                 <div class="region-panel" id="panel-latam">
-                    <div class="panel-header reveal">
-                        <span class="panel-eyebrow">Region</span>
-                        <h2>Latin America</h2>
-                        <p>Partner services for Mexico, Central America, the Caribbean, and South America.</p>
-                    </div>
-
+                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>Latin America</h2><p>Partner services for Mexico, Central America, the Caribbean, and South America.</p></div>
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#c0392b;">ES</span>
-                            <h3>Spanish</h3><span>Supports Spanish</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">ES</span><h3>Spanish</h3><span>Supports Spanish</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇩🇴</div><div><div class="cc-name">Dominican Republic</div><div class="cc-lang">Supports Spanish</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-do@alphaonerp.com">partners-do@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+18095550100">+1 809-555-0100</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                         <div class="contact-card reveal reveal-d2">
                             <div class="cc-identity"><div class="cc-flag">🇲🇽</div><div><div class="cc-name">Mexico</div><div class="cc-lang">Supports Spanish</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-mx@alphaonerp.com">partners-mx@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+525555550200">+52 55 5555-0200</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                         <div class="contact-card reveal reveal-d3">
                             <div class="cc-identity"><div class="cc-flag">🇨🇴</div><div><div class="cc-name">Colombia</div><div class="cc-lang">Supports Spanish</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-co@alphaonerp.com">partners-co@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+5716015550300">+57 601 555-0300</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                         <div class="contact-card reveal">
                             <div class="cc-identity"><div class="cc-flag">🇦🇷</div><div><div class="cc-name">Argentina</div><div class="cc-lang">Supports Spanish</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-ar@alphaonerp.com">partners-ar@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+541143297398">+54 11 4329-7398</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
-
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:#1e8449;">PT</span>
-                            <h3>Portuguese</h3><span>Supports Portuguese</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#1e8449;">PT</span><h3>Portuguese</h3><span>Supports Portuguese</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇧🇷</div><div><div class="cc-name">Brazil</div><div class="cc-lang">Supports Portuguese</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-br@alphaonerp.com">partners-br@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+551155550400">+55 11 5555-0400</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- OTHER TEAMS -->
                 <div class="region-panel" id="panel-other">
-                    <div class="panel-header reveal">
-                        <span class="panel-eyebrow">Region</span>
-                        <h2>Other Teams</h2>
-                        <p>Global partner operations, technology alliances, and general inquiries.</p>
-                    </div>
+                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>Other Teams</h2><p>Global partner operations, technology alliances, and general inquiries.</p></div>
                     <div class="lang-group">
-                        <div class="lang-group-header reveal">
-                            <span class="lang-tag" style="background:var(--navy);">EN</span>
-                            <h3>Global</h3><span>All languages welcome</span>
-                        </div>
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>Global</h3><span>All languages welcome</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🌐</div><div><div class="cc-name">General Partner Inquiries</div><div class="cc-lang">All languages</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners@alphaonerp.com">partners@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Sales</div><a href="mailto:sales@alphaonerp.com">sales@alphaonerp.com</a></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                         <div class="contact-card reveal reveal-d2">
                             <div class="cc-identity"><div class="cc-flag">📋</div><div><div class="cc-name">Technology Alliances</div><div class="cc-lang">Supports English</div></div></div>
                             <div class="cc-col"><div class="cc-label">Alliances Team</div><a href="mailto:alliances@alphaonerp.com">alliances@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Business Hours</div><span>Mon–Fri, 8am–6pm EST</span></div>
-                            <div class="cc-actions"><button class="btn-sm-primary">Open a new case</button><button class="btn-sm-outline">View cases</button></div>
                         </div>
                     </div>
                 </div>
 
             </div><!-- /region-panels -->
         </div><!-- /contacts-wrap -->
-    </section>
-
-    <!-- SUPPORTING DOCUMENTS -->
-    <section class="docs-section" id="docs">
-        <div class="container">
-            <div class="docs-header reveal">
-                <span class="eyebrow-tag">Supporting Documents</span>
-                <h2>Application Process Guides</h2>
-                <p>Step-by-step instructions for setting up your partner profile and completing company onboarding, by region.</p>
-            </div>
-            <div class="docs-grid">
-                <div class="doc-card reveal reveal-d1">
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-info">
-                        <h4>North America Application Process</h4>
-                        <p>US and Canada partner onboarding and portal registration guide.</p>
-                        <button class="doc-dl"><i class="fas fa-download"></i> Download PDF</button>
-                    </div>
-                </div>
-                <div class="doc-card reveal reveal-d2">
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-info">
-                        <h4>LATAM Application Process — Español</h4>
-                        <p>Guía de solicitud para socios en América Latina y el Caribe.</p>
-                        <button class="doc-dl"><i class="fas fa-download"></i> Descargar PDF</button>
-                    </div>
-                </div>
-                <div class="doc-card reveal reveal-d3">
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-info">
-                        <h4>LATAM Application Process — Português</h4>
-                        <p>Guia de candidatura para parceiros na América Latina e Brasil.</p>
-                        <button class="doc-dl"><i class="fas fa-download"></i> Baixar PDF</button>
-                    </div>
-                </div>
-                <div class="doc-card reveal reveal-d1">
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-info">
-                        <h4>EMEA Application Process — English</h4>
-                        <p>Partner application guide for European, Middle Eastern, and African regions.</p>
-                        <button class="doc-dl"><i class="fas fa-download"></i> Download PDF</button>
-                    </div>
-                </div>
-                <div class="doc-card reveal reveal-d2">
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-info">
-                        <h4>EMEA Application Process — FR / DE</h4>
-                        <p>Guide bilingue pour les partenaires EMEA — français et allemand.</p>
-                        <button class="doc-dl"><i class="fas fa-download"></i> Download PDF</button>
-                    </div>
-                </div>
-                <div class="doc-card reveal reveal-d3">
-                    <div class="doc-icon"><i class="fas fa-file-pdf"></i></div>
-                    <div class="doc-info">
-                        <h4>APAC Application Process</h4>
-                        <p>Step-by-step partner onboarding guide for Asia Pacific markets.</p>
-                        <button class="doc-dl"><i class="fas fa-download"></i> Download PDF</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- BECOME A PARTNER -->
@@ -947,65 +409,35 @@
                     <span class="eyebrow-tag">Not a Partner Yet?</span>
                     <h2>Join the<br><em>ALPHAONE</em><br>Partner Network</h2>
                     <p>Apply in minutes and get a response from our partner team within 2 business days. No fees, no commitments to start.</p>
-
                     <div class="become-perks">
                         <div class="perk-row">
                             <div class="perk-icon"><i class="fas fa-percent"></i></div>
-                            <div class="perk-text">
-                                <h4>Competitive Margins</h4>
-                                <p>Earn up to 30% reseller margin depending on your tier and deal volume.</p>
-                            </div>
+                            <div class="perk-text"><h4>Competitive Margins</h4><p>Earn reseller margins and referral commissions on every deal you bring in.</p></div>
                         </div>
                         <div class="perk-row">
                             <div class="perk-icon"><i class="fas fa-headset"></i></div>
-                            <div class="perk-text">
-                                <h4>Dedicated Support</h4>
-                                <p>Named Partner Success Manager from Gold tier onwards.</p>
-                            </div>
+                            <div class="perk-text"><h4>Dedicated Support</h4><p>A named Partner Success Manager assigned to your account from day one.</p></div>
                         </div>
                         <div class="perk-row">
                             <div class="perk-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="perk-text">
-                                <h4>Training &amp; Certification</h4>
-                                <p>Access the ALPHAONE Learning Hub with role-based paths and certifications.</p>
-                            </div>
+                            <div class="perk-text"><h4>Training &amp; Certification</h4><p>Access the ALPHAONE Learning Hub with role-based paths and certifications.</p></div>
                         </div>
                     </div>
-
-                    <div class="become-actions">
+                    <!--<div class="become-actions">
                         <button class="btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</button>
-                        <button class="btn-outline-navy">View Tier Benefits</button>
-                    </div>
+                    </div>-->
                 </div>
-
-                <!-- Tier cards -->
-                <div class="tier-cards reveal">
-                    <div class="tier-card">
-                        <div class="tier-card-icon" style="background:rgba(148,163,184,.1);">🥈</div>
-                        <div class="tier-card-body">
-                            <span class="tier-badge-sm silver">Silver</span>
-                            <h4>Registered Partner</h4>
-                            <p>Portal access, co-branded materials, and up to 10% referral commission.</p>
+                <div class="become-visual reveal">
+                    <div class="become-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=900" alt="ALPHAONE Partners" />
+                        <div class="become-img-overlay"></div>
+                        <div class="become-img-stats">
+                            <div class="bis-item"><span class="bis-num">280<span>+</span></span><span class="bis-lbl">Active Partners</span></div>
+                            <div class="bis-divider"></div>
+                            <div class="bis-item"><span class="bis-num">42</span><span class="bis-lbl">Countries</span></div>
+                            <div class="bis-divider"></div>
+                            <div class="bis-item"><span class="bis-num">97<span>%</span></span><span class="bis-lbl">Retention</span></div>
                         </div>
-                        <i class="fas fa-chevron-right tier-card-arrow"></i>
-                    </div>
-                    <div class="tier-card featured">
-                        <div class="tier-card-icon" style="background:rgba(234,179,8,.1);">🥇</div>
-                        <div class="tier-card-body">
-                            <span class="tier-badge-sm gold">Gold</span>
-                            <h4>Gold Partner</h4>
-                            <p>Named success manager, deal registration, and up to 20% reseller margin.</p>
-                        </div>
-                        <i class="fas fa-chevron-right tier-card-arrow"></i>
-                    </div>
-                    <div class="tier-card">
-                        <div class="tier-card-icon" style="background:rgba(2,132,199,.1);">💎</div>
-                        <div class="tier-card-body">
-                            <span class="tier-badge-sm plat">Platinum</span>
-                            <h4>Platinum Partner</h4>
-                            <p>Executive sponsorship, joint GTM, priority SLA, and up to 30% margin.</p>
-                        </div>
-                        <i class="fas fa-chevron-right tier-card-arrow"></i>
                     </div>
                 </div>
             </div>
@@ -1018,42 +450,27 @@
             <div class="footer-brand">
                 <div class="footer-logo">ALPHAONE</div>
                 <p>Scalable ERP for Manufacturing &amp; Distribution. The system of choice for businesses across the world.</p>
-                <p style="font-size:.8rem;color:var(--gray-400);margin-top:.35rem;">Expert Partnership with <strong style="color:#7dd3fc;">CNSWARE</strong></p>
+                <a href="partners.html"><p class="footer-partner">Expert Partnership<strong></strong></p></a>
             </div>
-            <div class="footer-col">
+            <div class="footer-contact-block">
                 <h4>Contact</h4>
                 <ul class="footer-contact-list">
-                    <li>
-                        <span class="fc-icon"><i class="fas fa-map-marker-alt"></i></span>
-                        <span>100 Cummings Center Suite 321B<br>Beverly, MA 01905, United States</span>
-                    </li>
-                    <li>
-                        <span class="fc-icon"><i class="fas fa-phone"></i></span>
-                        <a href="tel:9788670818">978-867-0818</a>
-                    </li>
-                    <li>
-                        <span class="fc-icon"><i class="fas fa-envelope"></i></span>
-                        <a href="mailto:sales@alphaonerp.com">sales@alphaonerp.com</a>
-                    </li>
-                    <li>
-                        <span class="fc-icon"><i class="fas fa-envelope"></i></span>
-                        <a href="mailto:info@alphaonerp.com">info@alphaonerp.com</a>
-                    </li>
+                    <li><span class="fc-icon"><i class="fas fa-map-marker-alt"></i></span><span>100 Cummings Center Suite 321B<br>Beverly, MA 01905, United States</span></li>
+                    <li><span class="fc-icon"><i class="fas fa-phone"></i></span><a href="tel:9788670818">978-867-0818</a></li>
+                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="mailto:sales@alphaonerp.com">sales@alphaonerp.com</a></li>
+                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="mailto:info@alphaonerp.com">info@alphaonerp.com</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-nav-block">
                 <h4>Pages</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="presence.html">Global Presence</a></li>
                     <li><a href="benefits.html">Why ALPHAONE?</a></li>
-                    <li><a href="partners.html">Partners</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bar">
-            <p>&copy; 2020 ALPHAONE Incorporated.</p>
-        </div>
+        <div class="footer-bar"><p>&copy; 2020 ALPHAONE Incorporated.</p></div>
     </footer>
 
     <script>
@@ -1062,16 +479,12 @@
             const hamburgerBtn = document.getElementById('hamburger-btn');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            window.addEventListener('scroll', () => {
-                navbar.classList.toggle('scrolled', window.scrollY > 50);
-            });
+            window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
             hamburgerBtn.addEventListener('click', () => {
                 const open = mobileMenu.style.display === 'block';
                 mobileMenu.style.display = open ? 'none' : 'block';
             });
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
-            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => { link.addEventListener('click', () => { mobileMenu.style.display = 'none'; }); });
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     const id = this.getAttribute('href');
@@ -1083,25 +496,10 @@
                     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
                 });
             });
-
-            // Scroll reveal
             const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        obs.unobserve(entry.target);
-                    }
-                });
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); } });
             }, { threshold: 0.07 });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            // Language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
         });
 
         function switchRegion(id, btn) {
@@ -1109,8 +507,6 @@
             document.querySelectorAll('.rtab').forEach(b => b.classList.remove('active'));
             document.getElementById('panel-' + id).classList.add('active');
             btn.classList.add('active');
-
-            // Re-trigger reveals in new panel
             document.querySelectorAll('#panel-' + id + ' .reveal').forEach(el => {
                 el.classList.remove('visible');
                 setTimeout(() => el.classList.add('visible'), 60);
