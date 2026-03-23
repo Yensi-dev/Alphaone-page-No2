@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHAONE Inc. | Partner Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="video/ALPHAONE.png">
+    <link rel="stylesheet" href="css/apply_partners.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo-text">ALPHAONE</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="presence.html">Global Presence</a></li>
+                <li><a href="benefits.html">Why <span style="color:#0c1c2ed0;">ALPHAONE?</span></a></li>
+                <li><a href="partners.html" class="active">Partners</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger-btn"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="presence.html">Global Presence</a>
+        <a href="benefits.html">Why ALPHAONE?</a>
+        <a href="partners.html">Partners</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="page-hero-overlay"></div>
+        <div class="page-hero-inner container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="partners.html">Partners</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Apply</span>
+            </div>
+            <h1>Business Partner<br><em>Application</em></h1>
+            <p>Complete the form below to apply for the ALPHAONE Partner Program. Our team will review your application within 2 business days.</p>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section class="bpa-section">
+        <div class="container">
+            <div class="bpa-grid reveal">
+
+                <!-- LEFT SIDEBAR -->
+                <div class="bpa-sidebar">
+                    <div class="bpa-steps">
+                        <h3>Application Steps</h3>
+                        <div class="step-item active" id="nav-step-1">
+                            <div class="step-num">1</div>
+                            <div class="step-label">Company Information</div>
+                        </div>
+                        <div class="step-item" id="nav-step-2">
+                            <div class="step-num">2</div>
+                            <div class="step-label">Contact Details</div>
+                        </div>
+                        <div class="step-item" id="nav-step-3">
+                            <div class="step-num">3</div>
+                            <div class="step-label">Partnership Scope</div>
+                        </div>
+                        <div class="step-item" id="nav-step-4">
+                            <div class="step-num">4</div>
+                            <div class="step-label">Agreement &amp; Submit</div>
+                        </div>
+                    </div>
+
+                    <div class="bpa-info-card">
+                        <h4>What happens next</h4>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-search"></i></div>
+                            <div class="info-text">
+                                <h5>Review</h5>
+                                <p>Our team reviews your application within 2 business days.</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h5>Response</h5>
+                                <p>You'll receive an email with the decision and next steps.</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="info-text">
+                                <h5>Onboarding</h5>
+                                <p>Approved partners get portal access and a dedicated session.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <div class="bpa-form-wrap">
+
+                    <!-- Progress bar -->
+                    <div class="progress-bar-wrap">
+                        <div class="progress-track">
+                            <div class="progress-fill" id="progress-fill" style="width:25%"></div>
+                        </div>
+                        <div class="progress-labels">
+                            <span id="lbl-1" class="active">Company</span>
+                            <span id="lbl-2">Contact</span>
+                            <span id="lbl-3">Scope</span>
+                            <span id="lbl-4">Agreement</span>
+                        </div>
+                    </div>
+
+                    <!-- STEP 1 — Company Info -->
+                    <div class="form-step active" id="step-1">
+                        <div class="form-step-header">
+                            <span class="step-eyebrow">Step 1 of 4</span>
+                            <h2>Company Information</h2>
+                            <p>Tell us about your organization.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Legal Company Name <span class="req">*</span></label>
+                                <input type="text" id="company-name" placeholder="Acme Corp LLC" />
+                                <span class="field-error" id="err-company-name">This field is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Trade Name / DBA <span class="opt">(optional)</span></label>
+                                <input type="text" placeholder="Acme" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Company Website</label>
+                                <input type="url" id="company-website" placeholder="https://yourcompany.com" />
+                                <span class="field-error" id="err-company-website">Please enter a valid URL.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Year Founded</label>
+                                <input type="number" placeholder="2010" min="1900" max="2025" />
+                            </div>
+                        </div>
+
+                        <div class="form-row three">
+                            <div class="form-group">
+                                <label>Country <span class="req">*</span></label>
+                                <select id="country">
+                                    <option value="">Select…</option>
+                                    <option>United States</option>
+                                    <option>Dominican Republic</option>
+                                    <option>Mexico</option>
+                                    <option>Colombia</option>
+                                    <option>Brazil</option>
+                                    <option>Argentina</option>
+                                    <option>Puerto Rico</option>
+                                    <option>Spain</option>
+                                    <option>United Kingdom</option>
+                                    <option>Germany</option>
+                                    <option>France</option>
+                                    <option>Australia</option>
+                                    <option>Singapore</option>
+                                    <option>Japan</option>
+                                    <option>Other</option>
+                                </select>
+                                <span class="field-error" id="err-country">Please select a country.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>State / Province</label>
+                                <input type="text" placeholder="Massachusetts" />
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" placeholder="Boston" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Number of Employees <span class="req">*</span></label>
+                                <select id="employees">
+                                    <option value="">Select range…</option>
+                                    <option>1 – 10</option>
+                                    <option>11 – 50</option>
+                                    <option>51 – 200</option>
+                                    <option>201 – 1,000</option>
+                                    <option>1,000+</option>
+                                </select>
+                                <span class="field-error" id="err-employees">Please select a range.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Annual Revenue (USD) <span class="opt">(optional)</span></label>
+                                <select>
+                                    <option value="">Select range…</option>
+                                    <option>Under $500K</option>
+                                    <option>$500K – $2M</option>
+                                    <option>$2M – $10M</option>
+                                    <option>$10M – $50M</option>
+                                    <option>$50M+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label>Industries Served <span class="req">*</span></label>
+                                <div class="check-grid" id="industries">
+                                    <label class="check-item"><input type="checkbox" value="manufacturing"> <span>Manufacturing</span></label>
+                                    <label class="check-item"><input type="checkbox" value="distribution"> <span>Distribution</span></label>
+                                    <label class="check-item"><input type="checkbox" value="retail"> <span>Retail &amp; E-Commerce</span></label>
+                                    <label class="check-item"><input type="checkbox" value="healthcare"> <span>Healthcare</span></label>
+                                    <label class="check-item"><input type="checkbox" value="finance"> <span>Finance &amp; Professional Services</span></label>
+                                    <label class="check-item"><input type="checkbox" value="other"> <span>Other</span></label>
+                                </div>
+                                <span class="field-error" id="err-industries">Please select at least one industry.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 — Contact Details -->
+                    <div class="form-step" id="step-2">
+                        <div class="form-step-header">
+                            <span class="step-eyebrow">Step 2 of 4</span>
+                            <h2>Contact Details</h2>
+                            <p>Primary contact for this application.</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="req">*</span></label>
+                                <input type="text" id="first-name" placeholder="Jane" />
+                                <span class="field-error" id="err-first-name">This field is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="req">*</span></label>
+                                <input type="text" id="last-name" placeholder="Smith" />
+                                <span class="field-error" id="err-last-name">This field is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Job Title <span class="req">*</span></label>
+                                <input type="text" id="job-title" placeholder="VP of Sales" />
+                                <span class="field-error" id="err-job-title">This field is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Department</label>
+                                <select>
+                                    <option value="">Select…</option>
+                                    <option>Sales</option>
+                                    <option>Business Development</option>
+                                    <option>Technology / IT</option>
+                                    <option>Operations</option>
+                                    <option>Executive</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Business Email <span class="req">*</span></label>
+                                <input type="email" id="email" placeholder="jane@company.com" />
+                                <span class="field-error" id="err-email">Please enter a valid email address.</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number <span class="req">*</span></label>
+                                <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
+                                <span class="field-error" id="err-phone">This field is required.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>LinkedIn Profile <span class="opt">(optional)</span></label>
+                                <input type="url" placeholder="https://linkedin.com/in/yourprofile" />
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Language</label>
+                                <select>
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>Portuguese</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                    <option>Japanese</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3 — Partnership Scope -->
+                    <div class="form-step" id="step-3">
+                        <div class="form-step-header">
+                            <span class="step-eyebrow">Step 3 of 4</span>
+                            <h2>Partnership Scope</h2>
+                            <p>Help us understand how you'd like to work with ALPHAONE.</p>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label>Partnership Type <span class="req">*</span></label>
+                                <div class="check-grid">
+                                    <label class="check-item"><input type="radio" name="partner-type" value="reseller"> <span>Reseller / VAR</span></label>
+                                    <label class="check-item"><input type="radio" name="partner-type" value="integrator"> <span>System Integrator</span></label>
+                                    <label class="check-item"><input type="radio" name="partner-type" value="msp"> <span>Managed Service Provider</span></label>
+                                    <label class="check-item"><input type="radio" name="partner-type" value="alliance"> <span>Technology Alliance</span></label>
+                                    <label class="check-item"><input type="radio" name="partner-type" value="referral"> <span>Referral / Affiliate</span></label>
+                                    <label class="check-item"><input type="radio" name="partner-type" value="unsure"> <span>Not sure yet</span></label>
+                                </div>
+                                <span class="field-error" id="err-partner-type">Please select a partnership type.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Desired Tier</label>
+                                <select>
+                                    <option value="">Select…</option>
+                                    <option>Silver – Registered Partner</option>
+                                    <option>Gold – Gold Partner</option>
+                                    <option>Platinum – Platinum Partner</option>
+                                    <option>Not sure yet</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Estimated Deals / Year</label>
+                                <select>
+                                    <option value="">Select…</option>
+                                    <option>1 – 5</option>
+                                    <option>6 – 15</option>
+                                    <option>16 – 30</option>
+                                    <option>30+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label>Regions You Serve <span class="req">*</span></label>
+                                <div class="check-grid">
+                                    <label class="check-item"><input type="checkbox" value="na"> <span>North America</span></label>
+                                    <label class="check-item"><input type="checkbox" value="latam"> <span>Latin America</span></label>
+                                    <label class="check-item"><input type="checkbox" value="emea"> <span>EMEA</span></label>
+                                    <label class="check-item"><input type="checkbox" value="apac"> <span>Asia Pacific</span></label>
+                                </div>
+                                <span class="field-error" id="err-regions">Please select at least one region.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label>ERP Experience <span class="opt">(optional)</span></label>
+                                <select>
+                                    <option value="">Select…</option>
+                                    <option>No prior ERP experience</option>
+                                    <option>Less than 2 years</option>
+                                    <option>2 – 5 years</option>
+                                    <option>5 – 10 years</option>
+                                    <option>10+ years</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label>Tell us about your business &amp; interest <span class="opt">(optional)</span></label>
+                                <textarea placeholder="Describe your current business, the clients you serve, and why you're interested in partnering with ALPHAONE…"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-row full">
+                            <div class="form-group">
+                                <label>How did you hear about us? <span class="opt">(optional)</span></label>
+                                <select>
+                                    <option value="">Select…</option>
+                                    <option>Search engine</option>
+                                    <option>LinkedIn</option>
+                                    <option>Referral from existing partner</option>
+                                    <option>Industry event</option>
+                                    <option>ALPHAONE sales team</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4 — Agreement -->
+                    <div class="form-step" id="step-4">
+                        <div class="form-step-header">
+                            <span class="step-eyebrow">Step 4 of 4</span>
+                            <h2>Agreement &amp; Submit</h2>
+                            <p>Please review the terms and confirm your submission.</p>
+                        </div>
+
+                        <div class="agreement-box">
+                            <h4>ALPHAONE Partner Program — Terms Summary</h4>
+                            <p>By submitting this application, you acknowledge that the information provided is accurate and complete to the best of your knowledge. ALPHAONE Inc. reserves the right to approve or decline any application at its sole discretion.</p>
+                            <p>Approved partners agree to comply with ALPHAONE's Partner Code of Conduct, maintain the confidentiality of proprietary information, and accurately represent ALPHAONE products and services to end customers.</p>
+                            <p>Partner tiers, margin structures, and program benefits are subject to change with 30 days' written notice. Partners may be re-evaluated on a quarterly basis based on performance metrics including revenue, customer satisfaction, and certification status.</p>
+                            <p>Either party may terminate the partnership agreement with 30 days' written notice. Upon termination, all use of ALPHAONE trademarks, co-branded materials, and confidential information must cease immediately.</p>
+                            <p>This application does not constitute a binding agreement. A formal Partner Agreement will be issued upon approval and must be signed by an authorized representative of your organization.</p>
+                        </div>
+
+                        <label class="agree-check" id="agree-terms-label">
+                            <input type="checkbox" id="agree-terms" />
+                            <span>I have read and agree to the <a href="#">ALPHAONE Partner Program Terms</a> and confirm that all information provided in this application is accurate. <span style="color:#dc2626;">*</span></span>
+                        </label>
+                        <span class="field-error" id="err-agree-terms">You must accept the terms to submit.</span>
+
+                        <label class="agree-check">
+                            <input type="checkbox" id="agree-privacy" />
+                            <span>I agree to ALPHAONE's <a href="#">Privacy Policy</a> and consent to the processing of my personal data for the purposes of this application.</span>
+                        </label>
+
+                        <label class="agree-check">
+                            <input type="checkbox" id="agree-comms" />
+                            <span>I would like to receive updates about the ALPHAONE Partner Program, product news, and partner resources via email. <span class="opt">(optional)</span></span>
+                        </label>
+
+                        <!-- Summary -->
+                        <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-top:1rem;">
+                            <div style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);margin-bottom:.85rem;">Application Summary</div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;" id="summary-grid">
+                                <div style="font-size:.82rem;color:var(--gray-500);">Company</div>
+                                <div style="font-size:.82rem;font-weight:600;color:var(--navy);" id="sum-company">—</div>
+                                <div style="font-size:.82rem;color:var(--gray-500);">Contact</div>
+                                <div style="font-size:.82rem;font-weight:600;color:var(--navy);" id="sum-contact">—</div>
+                                <div style="font-size:.82rem;color:var(--gray-500);">Email</div>
+                                <div style="font-size:.82rem;font-weight:600;color:var(--navy);" id="sum-email">—</div>
+                                <div style="font-size:.82rem;color:var(--gray-500);">Country</div>
+                                <div style="font-size:.82rem;font-weight:600;color:var(--navy);" id="sum-country">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUCCESS -->
+                    <div class="success-panel" id="success-panel">
+                        <div class="success-icon"><i class="fas fa-check"></i></div>
+                        <h2>Application Submitted!</h2>
+                        <p>Thank you for applying to the ALPHAONE Partner Program. Our team will review your application and get back to you within 2 business days.</p>
+                        <div class="success-ref">Reference: <strong id="ref-number">BPA-2026-XXXX</strong></div>
+                        <br>
+                        <a href="partners.html" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:var(--white);padding:.85rem 2rem;border-radius:var(--radius);font-weight:600;font-size:.9rem;box-shadow:0 4px 14px rgba(2,132,199,.3);transition:background var(--trans);" onmouseover="this.style.background='var(--accent-hover)'" onmouseout="this.style.background='var(--accent)'">
+                            <i class="fas fa-arrow-left"></i> Back to Partners
+                        </a>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions" id="form-actions">
+                        <span class="step-counter" id="step-counter">Step 1 of 4</span>
+                        <div class="form-actions-right">
+                            <button class="btn-ghost" id="btn-back" style="display:none;" onclick="goBack()">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </button>
+                            <button class="btn-primary" id="btn-next" onclick="goNext()">
+                                Next <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div><!-- /bpa-form-wrap -->
+            </div>
+        </div>
+    </section>
+
+   <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">ALPHAONE</div>
+                <p>Scalable ERP for Manufacturing & Distribution. The system of choice for businesses across the world.</p>
+                <a href="partners.html"><p class="footer-partner">Expert Partnership<strong></strong></p></a>
+            </div>
+            <div class="footer-contact-block">
+                <h4>Contact</h4>
+                <ul class="footer-contact-list">
+                    <li><span class="fc-icon"><i class="fas fa-map-marker-alt"></i></span><span>100 Cummings Center Suite 321B <br>Beverly, MA 01905, United States<br></span> </li>
+                    <li><span class="fc-icon"><i class="fas fa-phone"></i></span><a href="tel:9787787576">978-867-0818</a></li>
+                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="mailto:info@alphaonerp.com">sales@alphaonerp.com</a></li>
+                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="mailto:info@alphaonerp.com">info@alphaonerp.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-block">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="presence.html">Global Presence</a></li>
+                    <li><a href="benefits.html">Why ALPHAONE?</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bar">
+            <p>&copy; 2020 ALPHAONE Incorporated.</p>
+        </div>
+    </footer>
+
+    <script src="js/apply_partners.js"></script>
+
+</body>
+</html>
