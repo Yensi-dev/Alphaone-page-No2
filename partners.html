@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="video/ALPHAONE.png">
     <link rel="stylesheet" href="css/partners.css">
 </head>
 <body>
@@ -20,7 +19,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="presence.html">Global Presence</a></li>
                 <li><a href="benefits.html">Why <span style="color:#0c1c2ed0;">ALPHAONE?</span></a></li>
-                <li><a href="partners.html">Partners</a></li>
+                <li><a href="partners.html" class="active">Partners</a></li>
             </ul>
             <div class="hamburger" id="hamburger-btn"><span></span><span></span><span></span></div>
         </div>
@@ -52,11 +51,12 @@
         <div class="contacts-wrap" style="max-width:1180px;margin:0 auto;">
 
             <div class="region-sidebar">
-                <div class="region-sidebar-title">Select Region</div>
-                <button class="rtab active" onclick="switchRegion('na',this)"><span class="rtab-flag">🌎</span> North America<span class="rtab-count">2</span></button>
-                <button class="rtab" onclick="switchRegion('emea',this)"><span class="rtab-flag">🌍</span> EMEA<span class="rtab-count">4</span></button>
-                <button class="rtab" onclick="switchRegion('apac',this)"><span class="rtab-flag">🌏</span> APAC<span class="rtab-count">3</span></button>
-                <button class="rtab" onclick="switchRegion('latam',this)"><span class="rtab-flag">🌎</span> LATAM<span class="rtab-count">5</span></button>
+                <div class="region-sidebar-title">Select Continent</div>
+                <button class="rtab" onclick="switchRegion('latam',this)"><span class="rtab-flag">🌎</span> Latin America<span class="rtab-count">5</span></button>
+                <button class="rtab active" onclick="switchRegion('na',this)"><span class="rtab-flag">🌎</span>America<span class="rtab-count">3</span></button>
+                <button class="rtab" onclick="switchRegion('europe',this)"><span class="rtab-flag">🌍</span> Europe<span class="rtab-count">4</span></button>
+                <button class="rtab" onclick="switchRegion('mea',this)"><span class="rtab-flag">🌍</span>Africa<span class="rtab-count">2</span></button>
+                <button class="rtab" onclick="switchRegion('apac',this)"><span class="rtab-flag">🌏</span> Asia<span class="rtab-count">4</span></button>
                 <button class="rtab" onclick="switchRegion('other',this)"><span class="rtab-flag">🌐</span> Other Teams<span class="rtab-count">2</span></button>
             </div>
 
@@ -65,7 +65,7 @@
                 <!-- NORTH AMERICA -->
                 <div class="region-panel active" id="panel-na">
                     <div class="panel-header reveal">
-                        <span class="panel-eyebrow">Region</span>
+                        <span class="panel-eyebrow">Continent</span>
                         <h2>North America</h2>
                         <p>Partner services for the United States, Canada, and Puerto Rico.</p>
                     </div>
@@ -77,7 +77,7 @@
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:9788670818">+1 978-867-0818</a></div>
                         </div>
                         <div class="contact-card reveal reveal-d2">
-                            <div class="cc-identity"><div class="cc-flag">🇨🇦</div><div><div class="cc-name">Canada</div><div class="cc-lang">Supports English</div></div></div>
+                            <div class="cc-identity"><div class="cc-flag">🇨🇦</div><div><div class="cc-name">Canada</div><div class="cc-lang">Supports English / French</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-ca@alphaonerp.com">partners-ca@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:18884567890">+1 888-456-7890</a></div>
                         </div>
@@ -85,27 +85,66 @@
                     <div class="lang-group">
                         <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">ES</span><h3>Spanish</h3><span>Supports Spanish</span></div>
                         <div class="contact-card reveal reveal-d1">
-                            <div class="cc-identity"><div class="cc-flag">🇵🇷</div><div><div class="cc-name">Puerto Rico</div><div class="cc-lang">Supports Spanish</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-pr@alphaonerp.com">partners-pr@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:17875550100">+1 787-555-0100</a></div>
+                            <div class="cc-identity"><div class="cc-flag">🇲🇽</div><div><div class="cc-name">Mexico</div><div class="cc-lang">Supports Spanish</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-mx@alphaonerp.com">partners-mx@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+525555550200">+52 55 5555-0200</a></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- EMEA -->
-                <div class="region-panel" id="panel-emea">
-                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>EMEA</h2><p>Europe, Middle East &amp; Africa partner services in multiple languages.</p></div>
+                <!-- LATIN AMERICA -->
+                <div class="region-panel" id="panel-latam">
+                    <div class="panel-header reveal">
+                        <span class="panel-eyebrow">Continent</span>
+                        <h2>Latin America</h2>
+                        <p>Partner services for the Caribbean and South America.</p>
+                    </div>
+                    <div class="lang-group">
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">ES</span><h3>Spanish</h3><span>Supports Spanish</span></div>
+                        <div class="contact-card reveal reveal-d1">
+                            <div class="cc-identity"><div class="cc-flag">🇩🇴</div><div><div class="cc-name">Dominican Republic</div><div class="cc-lang">Supports Spanish</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-do@alphaonerp.com">partners-do@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+18095550100">+1 809-555-0100</a></div>
+                        </div>
+                        <div class="contact-card reveal reveal-d2">
+                            <div class="cc-identity"><div class="cc-flag">🇵🇷</div><div><div class="cc-name">Puerto Rico</div><div class="cc-lang">Supports Spanish</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-pr@alphaonerp.com">partners-pr@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:17875550100">+1 787-555-0100</a></div>
+                        </div>
+                        <div class="contact-card reveal reveal-d3">
+                            <div class="cc-identity"><div class="cc-flag">🇨🇴</div><div><div class="cc-name">Colombia</div><div class="cc-lang">Supports Spanish</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-co@alphaonerp.com">partners-co@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+5716015550300">+57 601 555-0300</a></div>
+                        </div>
+                        <div class="contact-card reveal">
+                            <div class="cc-identity"><div class="cc-flag">🇦🇷</div><div><div class="cc-name">Argentina</div><div class="cc-lang">Supports Spanish</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-ar@alphaonerp.com">partners-ar@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+541143297398">+54 11 4329-7398</a></div>
+                        </div>
+                    </div>
+                    <div class="lang-group">
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#1e8449;">PT</span><h3>Portuguese</h3><span>Supports Portuguese</span></div>
+                        <div class="contact-card reveal reveal-d1">
+                            <div class="cc-identity"><div class="cc-flag">🇧🇷</div><div><div class="cc-name">Brazil</div><div class="cc-lang">Supports Portuguese</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-br@alphaonerp.com">partners-br@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+551155550400">+55 11 5555-0400</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EUROPE -->
+                <div class="region-panel" id="panel-europe">
+                    <div class="panel-header reveal">
+                        <span class="panel-eyebrow">Continent</span>
+                        <h2>Europe</h2>
+                        <p>Partner services across Western and Southern Europe in multiple languages.</p>
+                    </div>
                     <div class="lang-group">
                         <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>English</h3><span>Supports English</span></div>
                         <div class="contact-card reveal reveal-d1">
                             <div class="cc-identity"><div class="cc-flag">🇬🇧</div><div><div class="cc-name">United Kingdom</div><div class="cc-lang">Supports English</div></div></div>
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-uk@alphaonerp.com">partners-uk@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+442079460400">+44 20 7946 0400</a></div>
-                        </div>
-                        <div class="contact-card reveal reveal-d2">
-                            <div class="cc-identity"><div class="cc-flag">🌍</div><div><div class="cc-name">Middle East &amp; Africa</div><div class="cc-lang">Supports English</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-mea@alphaonerp.com">partners-mea@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+442079460600">+44 20 7946 0600</a></div>
                         </div>
                     </div>
                     <div class="lang-group">
@@ -134,9 +173,35 @@
                     </div>
                 </div>
 
-                <!-- APAC -->
+                <!-- MIDDLE EAST & AFRICA -->
+                <div class="region-panel" id="panel-mea">
+                    <div class="panel-header reveal">
+                        <span class="panel-eyebrow">Continent</span>
+                        <h2>Middle East &amp; Africa</h2>
+                        <p>Partner services for the Middle East and African markets.</p>
+                    </div>
+                    <div class="lang-group">
+                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>English</h3><span>Supports English</span></div>
+                        <div class="contact-card reveal reveal-d1">
+                            <div class="cc-identity"><div class="cc-flag">🇦🇪</div><div><div class="cc-name">UAE &amp; Middle East</div><div class="cc-lang">Supports English / Arabic</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-mea@alphaonerp.com">partners-mea@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+442079460600">+44 20 7946 0600</a></div>
+                        </div>
+                        <div class="contact-card reveal reveal-d2">
+                            <div class="cc-identity"><div class="cc-flag">🌍</div><div><div class="cc-name">Africa</div><div class="cc-lang">Supports English / French</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-africa@alphaonerp.com">partners-africa@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="mailto:partners-mea@alphaonerp.com">partners-mea@alphaonerp.com</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ASIA PACIFIC -->
                 <div class="region-panel" id="panel-apac">
-                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>Asia Pacific</h2><p>Partner services for Australia, New Zealand, Southeast Asia, and Japan.</p></div>
+                    <div class="panel-header reveal">
+                        <span class="panel-eyebrow">Continent</span>
+                        <h2>Asia Pacific</h2>
+                        <p>Partner services for Australia, New Zealand, Southeast Asia, and Japan.</p>
+                    </div>
                     <div class="lang-group">
                         <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>English</h3><span>Supports English</span></div>
                         <div class="contact-card reveal reveal-d1">
@@ -149,6 +214,11 @@
                             <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-apac@alphaonerp.com">partners-apac@alphaonerp.com</a></div>
                             <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+6565550700">+65 6555 0700</a></div>
                         </div>
+                        <div class="contact-card reveal reveal-d3">
+                            <div class="cc-identity"><div class="cc-flag">🇮🇳</div><div><div class="cc-name">India</div><div class="cc-lang">Supports English</div></div></div>
+                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-in@alphaonerp.com">partners-in@alphaonerp.com</a></div>
+                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+918001230000">+91 800 123 0000</a></div>
+                        </div>
                     </div>
                     <div class="lang-group">
                         <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">JP</span><h3>Japanese</h3><span>Supports Japanese</span></div>
@@ -160,45 +230,13 @@
                     </div>
                 </div>
 
-                <!-- LATAM -->
-                <div class="region-panel" id="panel-latam">
-                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>Latin America</h2><p>Partner services for Mexico, Central America, the Caribbean, and South America.</p></div>
-                    <div class="lang-group">
-                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#c0392b;">ES</span><h3>Spanish</h3><span>Supports Spanish</span></div>
-                        <div class="contact-card reveal reveal-d1">
-                            <div class="cc-identity"><div class="cc-flag">🇩🇴</div><div><div class="cc-name">Dominican Republic</div><div class="cc-lang">Supports Spanish</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-do@alphaonerp.com">partners-do@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+18095550100">+1 809-555-0100</a></div>
-                        </div>
-                        <div class="contact-card reveal reveal-d2">
-                            <div class="cc-identity"><div class="cc-flag">🇲🇽</div><div><div class="cc-name">Mexico</div><div class="cc-lang">Supports Spanish</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-mx@alphaonerp.com">partners-mx@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+525555550200">+52 55 5555-0200</a></div>
-                        </div>
-                        <div class="contact-card reveal reveal-d3">
-                            <div class="cc-identity"><div class="cc-flag">🇨🇴</div><div><div class="cc-name">Colombia</div><div class="cc-lang">Supports Spanish</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-co@alphaonerp.com">partners-co@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+5716015550300">+57 601 555-0300</a></div>
-                        </div>
-                        <div class="contact-card reveal">
-                            <div class="cc-identity"><div class="cc-flag">🇦🇷</div><div><div class="cc-name">Argentina</div><div class="cc-lang">Supports Spanish</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-ar@alphaonerp.com">partners-ar@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+541143297398">+54 11 4329-7398</a></div>
-                        </div>
-                    </div>
-                    <div class="lang-group">
-                        <div class="lang-group-header reveal"><span class="lang-tag" style="background:#1e8449;">PT</span><h3>Portuguese</h3><span>Supports Portuguese</span></div>
-                        <div class="contact-card reveal reveal-d1">
-                            <div class="cc-identity"><div class="cc-flag">🇧🇷</div><div><div class="cc-name">Brazil</div><div class="cc-lang">Supports Portuguese</div></div></div>
-                            <div class="cc-col"><div class="cc-label">Partner Services</div><a href="mailto:partners-br@alphaonerp.com">partners-br@alphaonerp.com</a></div>
-                            <div class="cc-col"><div class="cc-label">Technical Support</div><a href="tel:+551155550400">+55 11 5555-0400</a></div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- OTHER TEAMS -->
                 <div class="region-panel" id="panel-other">
-                    <div class="panel-header reveal"><span class="panel-eyebrow">Region</span><h2>Other Teams</h2><p>Global partner operations, technology alliances, and general inquiries.</p></div>
+                    <div class="panel-header reveal">
+                        <span class="panel-eyebrow">Global</span>
+                        <h2>Other Teams</h2>
+                        <p>Global partner operations, technology alliances, and general inquiries.</p>
+                    </div>
                     <div class="lang-group">
                         <div class="lang-group-header reveal"><span class="lang-tag" style="background:var(--navy);">EN</span><h3>Global</h3><span>All languages welcome</span></div>
                         <div class="contact-card reveal reveal-d1">
@@ -241,7 +279,7 @@
                         </div>
                     </div>
                     <div class="become-actions">
-                        <a href="apply_partners.html"><button class="btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</button></a>
+                        <a href="bpa.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Apply Now</a>
                     </div>
                 </div>
                 <div class="become-visual reveal">
@@ -266,33 +304,31 @@
         <div class="container footer-inner">
             <div class="footer-brand">
                 <div class="footer-logo">ALPHAONE</div>
-                <p>Scalable ERP for Manufacturing & Distribution. The system of choice for businesses across the world.</p>
-                <a href="partners.html"><p class="footer-partner">Expert Partnership<strong></strong></p></a>
+                <p>Scalable ERP for Manufacturing &amp; Distribution. The system of choice for businesses across the world.</p>
+                <p class="footer-partner">Expert Partnership with <strong>CNSWARE</strong></p>
             </div>
             <div class="footer-contact-block">
                 <h4>Contact</h4>
                 <ul class="footer-contact-list">
-                    <li><span class="fc-icon"><i class="fas fa-map-marker-alt"></i></span><span>100 Cummings Center Suite 321B <br>Beverly, MA 01905, United States<br></span> </li>
-                    <li><span class="fc-icon"><i class="fas fa-phone"></i></span><a href="tel:9787787576">978-867-0818</a></li>
-                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="mailto:info@alphaonerp.com">sales@alphaonerp.com</a></li>
-                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="mailto:info@alphaonerp.com">info@alphaonerp.com</a></li>
-                </ul>
+                    <li><span class="fc-icon"><i class="fas fa-map-marker-alt"></i></span><span>100 Cummings Center Suite 321B<br>Beverly, MA 01905, United States</span></li>
+                    <li><span class="fc-icon"><i class="fas fa-phone"></i></span><a href="tel:9788670818">978-867-0818</a></li>
+                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="/cdn-cgi/l/email-protection#6e1d0f020b1d2e0f021e060f01000b1c1e400d0103"><span class="__cf_email__" data-cfemail="9deefcf1f8eeddfcf1edf5fcf2f3f8efedb3fef2f0">[email&#160;protected]</span></a></li>
+                    <li><span class="fc-icon"><i class="fas fa-envelope"></i></span><a href="/cdn-cgi/l/email-protection#c8a5a7aaa3c8bfa7a3a6aea7a9aaab66aba7a5"><span class="__cf_email__" data-cfemail="e18c8e838aa1e18e83a9b1a88e8c8f8083c28f8381">[email&#160;protected]</span></a></li>
+                </ul>           
             </div>
             <div class="footer-nav-block">
-                <h4>Pages</h4>
+                <h4>Navigate</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="presence.html">Global Presence</a></li>
                     <li><a href="benefits.html">Why ALPHAONE?</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="#become">Become a Partner</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bar">
-            <p>&copy; 2020 ALPHAONE Incorporated.</p>
-        </div>
+        <div class="footer-bar">© 2024 ALPHAONE ERP. All rights reserved.</div>
     </footer>
-
     <script src="js/partners.js"></script>
-
 </body>
 </html>
