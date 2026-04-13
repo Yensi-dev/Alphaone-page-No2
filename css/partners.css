@@ -109,8 +109,8 @@
         .cc-label { font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-400); margin-bottom:.4rem; }
         .cc-col a { font-size:.92rem; color:var(--accent); font-weight:500; transition:color var(--trans); display:block; }
         .cc-col a:hover { color:var(--accent-hover); text-decoration:underline; }
-        .cc-col span { font-size:.92rem; color:var(--gray-700); }
-
+        .cc-col small { white-space: nowrap; }
+        
         .become-section { padding:6rem 0; background:var(--gray-50); border-top:1px solid var(--gray-200); }
         .become-grid { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
         .become-left {}
